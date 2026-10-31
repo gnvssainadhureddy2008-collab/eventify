@@ -1,0 +1,251 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "custom_type": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "guest_count": {
+      "type": "number"
+    },
+    "budget": {
+      "type": "number"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "string"
+    },
+    "location_address": {
+      "type": "string"
+    },
+    "location_label": {
+      "type": "string"
+    },
+    "location_lat": {
+      "type": "number"
+    },
+    "location_lng": {
+      "type": "number"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "venue_id": {
+      "type": "string"
+    },
+    "venue_name": {
+      "type": "string"
+    },
+    "venue_address": {
+      "type": "string"
+    },
+    "venue_phone": {
+      "type": "string"
+    },
+    "venue_website": {
+      "type": "string"
+    },
+    "venue_rating": {
+      "type": "number"
+    },
+    "venue_reviews": {
+      "type": "number"
+    },
+    "venue_lat": {
+      "type": "number"
+    },
+    "venue_lng": {
+      "type": "number"
+    },
+    "venue_maps_url": {
+      "type": "string"
+    },
+    "saved_venues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "reviews": {
+            "type": "number"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "maps_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "budget": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "percent": {
+                "type": "number"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "timeline": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "due_date": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "string"
+              },
+              "done": {
+                "type": "boolean"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "vendors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              },
+              "estimated_budget": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              },
+              "custom": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "ideas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "plan_generated_at": {
+      "type": "string"
+    },
+    "reminder_enabled": {
+      "type": "boolean"
+    },
+    "reminder_days": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "event_type",
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+export const TEMPLATES = [
+  {
+    id: "elegant-minimal",
+    label: "Elegant Minimal",
+    blurb: "Ivory, thin rules, generous space",
+    ornament: "minimal",
+    background: "linear-gradient(160deg,#FBF7F0 0%,#F4EDE2 100%)",
+    ink: "#3A2A35",
+    sub: "#8A7A70",
+    accent: "#B79A62",
+    eventTypes: ["Wedding", "Engagement", "Anniversary", "Baby Shower", "Bridal Shower", "Other / Custom Event"],
+  },
+  {
+    id: "floral",
+    label: "Floral",
+    blurb: "Soft blossoms in the corners",
+    ornament: "floral",
+    background: "linear-gradient(170deg,#FDF8F6 0%,#F6E9E5 100%)",
+    ink: "#4A3038",
+    sub: "#9A7E80",
+    accent: "#C08D86",
+    eventTypes: ["Wedding", "Baby Shower", "Bridal Shower", "Engagement", "Housewarming"],
+  },
+  {
+    id: "modern-luxe",
+    label: "Modern Luxury",
+    blurb: "Deep plum with a gold frame",
+    ornament: "luxe",
+    background: "linear-gradient(155deg,#3A2333 0%,#241722 100%)",
+    ink: "#F7EFE4",
+    sub: "#C8B49C",
+    accent: "#C9A464",
+    eventTypes: ["Corporate Event", "Charity or Fundraising Event", "Anniversary", "Wedding", "Conference or Seminar"],
+  },
+  {
+    id: "birthday",
+    label: "Birthday Celebration",
+    blurb: "Warm confetti and joyful type",
+    ornament: "confetti",
+    background: "linear-gradient(160deg,#FFF6EC 0%,#FBE7E1 100%)",
+    ink: "#4A2C3E",
+    sub: "#A2787F",
+    accent: "#D9A05B",
+    eventTypes: ["Birthday", "Retirement Party", "Farewell", "Housewarming"],
+  },
+  {
+    id: "wedding",
+    label: "Wedding Invitation",
+    blurb: "Classic monogram and script",
+    ornament: "monogram",
+    background: "linear-gradient(160deg,#FCF8F2 0%,#F1E7DA 100%)",
+    ink: "#40303A",
+    sub: "#8E7C72",
+    accent: "#B08D5B",
+    eventTypes: ["Wedding", "Engagement", "Anniversary"],
+  },
+  {
+    id: "cultural",
+    label: "Cultural Celebration",
+    blurb: "Mandala motifs, warm terracotta",
+    ornament: "mandala",
+    background: "linear-gradient(160deg,#FBF3E6 0%,#F3E2CC 100%)",
+    ink: "#59331F",
+    sub: "#9A6C48",
+    accent: "#B4643C",
+    eventTypes: ["Cultural Festival", "Religious Celebration", "Community Gathering", "College Festival"],
+  },
+  {
+    id: "college",
+    label: "College Festival",
+    blurb: "Bold type, sharp accent bar",
+    ornament: "bold",
+    background: "linear-gradient(150deg,#FBF7F0 0%,#EFE3D6 100%)",
+    ink: "#2C2230",
+    sub: "#7B6A72",
+    accent: "#8A5A3B",
+    eventTypes: ["College Festival", "Workshop", "Community Gathering", "Cultural Festival"],
+  },
+  {
+    id: "corporate",
+    label: "Corporate Event",
+    blurb: "Precise rules, quiet authority",
+    ornament: "grid",
+    background: "linear-gradient(160deg,#FAFAF7 0%,#EDEDE6 100%)",
+    ink: "#26303A",
+    sub: "#707C86",
+    accent: "#8B8570",
+    eventTypes: ["Corporate Event", "Conference or Seminar", "Workshop", "Graduation"],
+  },
+  {
+    id: "custom",
+    label: "Custom Celebration",
+    blurb: "A neutral canvas you can tint",
+    ornament: "soft",
+    background: "linear-gradient(160deg,#FBF7F1 0%,#F0E6DA 100%)",
+    ink: "#3B2B33",
+    sub: "#8B7A74",
+    accent: "#AF8F63",
+    eventTypes: ["Other / Custom Event", "Reunion", "Farewell", "Retirement Party", "Graduation", "Housewarming"],
+  },
+];
+
+export function templatesForType(eventType) {
+  return TEMPLATES.filter((t) => t.eventTypes.includes(eventType));
+}
+
+export function getTemplate(id) {
+  return TEMPLATES.find((t) => t.id === id) || TEMPLATES[0];
+}
+
+export const FONT_OPTIONS = [
+  { id: "display", label: "Classic serif" },
+  { id: "italic", label: "Elegant italic" },
+  { id: "sans", label: "Modern sans" },
+];

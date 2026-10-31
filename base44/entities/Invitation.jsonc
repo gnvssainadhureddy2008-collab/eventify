@@ -1,0 +1,84 @@
+{
+  "name": "Invitation",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "design_name": {
+      "type": "string"
+    },
+    "template": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "host_names": {
+      "type": "string"
+    },
+    "wording": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "venue_name": {
+      "type": "string"
+    },
+    "venue_address": {
+      "type": "string"
+    },
+    "rsvp": {
+      "type": "string"
+    },
+    "dress_code": {
+      "type": "string"
+    },
+    "extra_note": {
+      "type": "string"
+    },
+    "font_style": {
+      "type": "string"
+    },
+    "text_color": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "accent_color": {
+      "type": "string"
+    },
+    "show_qr": {
+      "type": "boolean"
+    },
+    "qr_data": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_id",
+    "template"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

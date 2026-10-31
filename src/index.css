@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 42% 96%;
+    --foreground: 318 18% 17%;
+    --card: 40 50% 99%;
+    --card-foreground: 318 18% 17%;
+    --popover: 40 50% 99%;
+    --popover-foreground: 318 18% 17%;
+    --primary: 320 27% 24%;
+    --primary-foreground: 40 48% 97%;
+    --secondary: 36 38% 92%;
+    --secondary-foreground: 320 27% 24%;
+    --muted: 36 28% 93%;
+    --muted-foreground: 320 9% 44%;
+    --accent: 40 47% 56%;
+    --accent-foreground: 320 30% 16%;
+    --destructive: 356 62% 46%;
+    --destructive-foreground: 40 48% 97%;
+    --border: 36 24% 87%;
+    --input: 36 24% 87%;
+    --ring: 40 47% 56%;
+    --chart-1: 40 52% 58%;
+    --chart-2: 6 44% 71%;
+    --chart-3: 320 27% 32%;
+    --chart-4: 150 18% 52%;
+    --chart-5: 28 40% 42%;
+    --radius: 1rem;
+    --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --font-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 40 48% 97%;
+    --sidebar-foreground: 320 18% 24%;
+    --sidebar-primary: 320 27% 24%;
+    --sidebar-primary-foreground: 40 48% 97%;
+    --sidebar-accent: 36 38% 92%;
+    --sidebar-accent-foreground: 320 27% 24%;
+    --sidebar-border: 36 24% 88%;
+    --sidebar-ring: 40 47% 56%;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 318 20% 8%;
+    --foreground: 40 28% 91%;
+    --card: 318 17% 11%;
+    --card-foreground: 40 28% 91%;
+    --popover: 318 17% 11%;
+    --popover-foreground: 40 28% 91%;
+    --primary: 40 34% 89%;
+    --primary-foreground: 318 26% 12%;
+    --secondary: 318 13% 17%;
+    --secondary-foreground: 40 24% 89%;
+    --muted: 318 13% 16%;
+    --muted-foreground: 36 11% 63%;
+    --accent: 40 47% 58%;
+    --accent-foreground: 318 28% 11%;
+    --destructive: 356 58% 52%;
+    --destructive-foreground: 40 48% 97%;
+    --border: 318 11% 22%;
+    --input: 318 11% 22%;
+    --ring: 40 47% 58%;
+    --chart-1: 40 50% 62%;
+    --chart-2: 6 44% 66%;
+    --chart-3: 40 34% 82%;
+    --chart-4: 150 18% 58%;
+    --chart-5: 28 38% 58%;
+    --sidebar-background: 318 17% 10%;
+    --sidebar-foreground: 40 26% 89%;
+    --sidebar-primary: 40 34% 89%;
+    --sidebar-primary-foreground: 318 26% 12%;
+    --sidebar-accent: 318 13% 17%;
+    --sidebar-accent-foreground: 40 24% 89%;
+    --sidebar-border: 318 11% 22%;
+    --sidebar-ring: 40 47% 58%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Navigation and button widgets: no text selection, no blue tap flash. */
+  a,
+  button,
+  [role="button"],
+  nav,
+  label,
+  summary,
+  select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "kern" 1;
+    overscroll-behavior-y: none;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(40 47% 56% / 0.28);
+  }
+}
+
+@layer components {
+  .serif-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+
+  .eyebrow {
+    @apply font-body uppercase;
+    font-size: 0.6875rem;
+    letter-spacing: 0.28em;
+    color: hsl(36 22% 52%);
+  }
+
+  .card-soft {
+    @apply rounded-3xl border border-border/70 bg-card;
+    box-shadow: 0 1px 2px hsl(320 20% 25% / 0.04), 0 18px 40px -28px hsl(320 25% 20% / 0.28);
+  }
+
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(40 47% 56% / 0.55), transparent);
+  }
+
+  .paper-grain {
+    background-image: radial-gradient(hsl(320 20% 30% / 0.05) 0.5px, transparent 0.5px);
+    background-size: 14px 14px;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+@keyframes shimmerBar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(220%); }
+}
+
+@keyframes veil {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  78% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-rise {
+  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade {
+  animation: fadeIn 0.9s ease both;
+}
+
+.animate-float {
+  animation: floatSlow 9s ease-in-out infinite;
+}
+
+.animate-draw {
+  transform-origin: left;
+  animation: drawLine 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, hsl(40 60% 96% / 0.9), transparent);
+  animation: shimmerBar 1.8s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.leaflet-container {
+  font-family: var(--font-body);
+  border-radius: 1rem;
+  background: hsl(36 28% 93%);
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: hsl(40 50% 99% / 0.8) !important;
+}
+
+.pin-elegant {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: hsl(320 27% 24%);
+  border: 3px solid hsl(40 60% 96%);
+  box-shadow: 0 0 0 6px hsl(40 47% 56% / 0.28);
+}
+
+.pin-venue {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: hsl(40 47% 56%);
+  border: 3px solid hsl(40 60% 98%);
+  box-shadow: 0 6px 16px hsl(320 25% 25% / 0.3);
+}
